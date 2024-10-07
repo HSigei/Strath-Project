@@ -1,6 +1,6 @@
 #include <iostream>
 #include <sstream>
-#include <vectors>
+#include <vector>
 #include <fstream>
 
 using namespace std;
@@ -52,7 +52,7 @@ int main(){
     for(int i =0; i<team.size(); i++) {
         for(int j = i +1; j<team.size(); j++) {
             fixtures.push_back({team[i],team[j],town[i], stadium[i], 1, weekend });
-            fixtures.push_back({team[j],team[i],town[i], stadium[i], 1, weekend });
+            fixtures.push_back({team[j],team[i],town[i], stadium[i], 2, weekend });
             match += 2;
 
             if(match == 2) {
@@ -61,7 +61,20 @@ int main(){
             }
         }
     }
-//continue her
+
+    ofstream displayingMatches("fixtures.csv");
+
+    displayingMatches <<"HOME TEAM,AWAY TEAM,HOME TOWN,STADIUM,LEG,WEEKEND"<<endl;
+
+    for(int k = 0; k<fixtures.size(); k++) {
+        displayingMatches<<fixtures[k].hometeam<<',';
+        displayingMatches<<fixtures[k].awayteam<<',';
+        displayingMatches<<fixtures[k].hometown<<',';
+        displayingMatches<<fixtures[k].stadium<<',';
+        displayingMatches<<fixtures[k].leg<<',';
+        displayingMatches<<fixtures[k].weekend<<endl;
+    }
+
 
 
     return 0;

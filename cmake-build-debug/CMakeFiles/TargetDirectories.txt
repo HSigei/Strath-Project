@@ -1,0 +1,3 @@
+C:/Users/toshy/CLionProjects/Strath-Project/cmake-build-debug/CMakeFiles/Strath_Project.dir
+C:/Users/toshy/CLionProjects/Strath-Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/toshy/CLionProjects/Strath-Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
