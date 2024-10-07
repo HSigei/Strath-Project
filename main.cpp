@@ -21,6 +21,30 @@ vector<string> stadium;
 vector<Fixtures> fixtures;
 
 int main(){
-    //continue here
+    //READING FROM CSV
+    ifstream myFile("teams_file.csv");
+    string line = "";
+
+    while(getline(myFile, line)) {
+        stringstream ss(line);
+        string teamToPush, townToPush, stadiumToPush;
+
+        getline(ss, teamToPush,',');
+        getline(ss, townToPush,',');
+        getline(ss, stadiumToPush,',');
+
+        //to check if the file is being read
+
+        cout<<teamToPush<<",";
+        cout<<townToPush<<",";
+        cout<<stadiumToPush<<endl;
+
+        team.push_back(teamToPush);
+        town.push_back(townToPush);
+        stadium.push_back(stadiumToPush);
+
+    }
+
+    myFile.close();
     return 0;
 }
