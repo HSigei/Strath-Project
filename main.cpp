@@ -46,5 +46,23 @@ int main(){
     }
 
     myFile.close();
+
+    int weekend = 1;
+    int match = 0;
+    for(int i =0; i<team.size(); i++) {
+        for(int j = i +1; j<team.size(); j++) {
+            fixtures.push_back({team[i],team[j],town[i], stadium[i], 1, weekend });
+            fixtures.push_back({team[j],team[i],town[i], stadium[i], 1, weekend });
+            match += 2;
+
+            if(match == 2) {
+                weekend++;
+                match = 0;
+            }
+        }
+    }
+
+
+
     return 0;
 }
